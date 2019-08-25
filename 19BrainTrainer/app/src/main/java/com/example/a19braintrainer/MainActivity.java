@@ -85,9 +85,8 @@ public class MainActivity extends AppCompatActivity {
             isRunning = false;
             timer.cancel();
             changeControl(true);
-            startB.getBackground().setColorFilter(Color.parseColor("#06b844"),PorterDuff.Mode.SRC_OVER);
-            startOver();
 
+            startOver();
             checkButtons(false);
         } else {
             newQuestion();
@@ -103,11 +102,10 @@ public class MainActivity extends AppCompatActivity {
                 public void onFinish() {
                     checkButtons(false);
                     changeControl(true);
-                    startB.getBackground().setColorFilter(Color.parseColor("#06b844"),PorterDuff.Mode.SRC_OVER);
                 }
             }.start();
             changeControl(false);
-            startB.getBackground().setColorFilter(Color.parseColor("#d13411"),PorterDuff.Mode.SRC_OVER);
+            
         }
     }
 
@@ -155,8 +153,10 @@ public class MainActivity extends AppCompatActivity {
     public void changeControl (boolean text) {
         if (text) {
             startB.setText("Start");
+            startB.getBackground().setColorFilter(Color.parseColor("#06b844"),PorterDuff.Mode.SRC_OVER);
         } else {
             startB.setText("Quit");
+            startB.getBackground().setColorFilter(Color.parseColor("#d13411"),PorterDuff.Mode.SRC_OVER);
         }
     }
     public void startOver() {
